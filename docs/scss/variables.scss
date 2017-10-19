@@ -1,0 +1,32 @@
+//
+// Variables
+// --------------------------------------------------
+
+// init
+// init
+$blue: #3c81df;
+$turquoise: #00c0ef;
+$red: #f56954;
+$green: #6cc788;
+$orange: #f2a654;
+$purple: #926dde;
+$yellow: #f39c12;
+$dark: #20232a;
+
+$background-color: #fff;
+
+
+// Override
+$primary: $blue;
+$info: $turquoise;
+$danger: $red;
+$warning: $yellow;
+$success: $green;
+
+$body-background: $background-color;
+
+// Typography
+$size-7: 0.85rem;
+
+// Animation
+$transition-speed: .3s;

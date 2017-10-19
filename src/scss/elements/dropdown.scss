@@ -1,0 +1,25 @@
+.dropdown-content {
+  padding: 3px 0;
+}
+.popper-dropdown {
+  border-radius: 3px;
+  .menu-list a i{
+    margin-right: 10px;
+  }
+}
+.popper-dropdown[x-placement^="bottom"] {
+  margin-top: 5px!important;
+}
+
+.dropdown-arrow {
+  .fa-angle-down {
+    transition: transform .377s ease;
+  }
+}
+.is-active {
+  .dropdown-arrow {
+    .fa-angle-down {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.pagination{
+  font-size: 13px;
+  &.is-small{
+    font-size: 12px;
+  }
+  &.is-left{
+    justify-content: flex-start;
+  }
+  &.is-right{
+    justify-content: flex-end;
+  }
+  ul{
+    list-style: none;
+    flex-grow: 0;
+    i{
+      line-height: 24px;
+    }
+    .is-small i{
+      line-height: 17px;
+    }
+  }
+  .btn-jumper{
+    width: 32px;
+    cursor: pointer;
+    a{
+      display:none;
+    }
+    &:after{
+      content: "\2022\2022\2022";
+      display: block;
+      letter-spacing: 2px;
+      color: #ccc;
+      text-align: center;
+      font-size: 12px;
+      font-family: Arial;
+      margin: 0 3px;
+    }
+    &:hover{
+      a{
+        display: block;
+      }
+      &:after{
+        display: none;
+      }
+    }
+  }
+  .input{
+    display: inline-block;
+    width: 45px;
+    vertical-align: baseline;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+  .page-info {
+    width: auto;
+    background: none;
+    line-height: 28px;
+    margin-right: 15px;
+  }
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  a {
+    min-width: 32px;
+  }
+  span {
+    color: $text-light;
+    display: inline-block;
+    margin: 0 4px; }
+  ul {
+    align-items: center;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+
+    li {
+      margin: 0 2px;
+    }
+  }
+  // Responsiveness
+  @include mobile {
+    flex-wrap: wrap;
+    & > a {
+      width: calc(50% - 5px);
+      &:not(:first-child) {
+        margin-left: 10px; } }
+    li {
+      flex-grow: 1;
+      flex-shrink: 0; }
+    ul {
+      margin-top: 10px; } }
+  @include tablet {
+    & > a {
+      &:not(:first-child) {
+        order: 1; } } } }

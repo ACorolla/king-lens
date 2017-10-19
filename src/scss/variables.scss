@@ -1,0 +1,44 @@
+//
+// Variables
+// --------------------------------------------------
+
+// init
+$blue: #3c81df!default;;
+$turquoise: #00c0ef!default;;
+$red: #f56954!default;;
+$green: #6cc788!default;;
+$orange: #f2a654!default;;
+$purple: #926dde!default;;
+$yellow: #f39c12!default;;
+
+$background-color: #fff!default;;
+
+$family-sans-serif: "PingFang SC", "Lantinghei SC", "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", 微软雅黑,
+STHeitiSC-Light, simsun, 宋体, "WenQuanYi Zen Hei", "WenQuanYi Micro Hei", sans-serif;
+$body-size: 14px;
+// Override
+$primary: $blue!default;;
+$info: $turquoise!default;;
+$danger: $red!default;;
+$warning: $yellow!default;;
+$success: $green!default;;
+
+$family-primary: $family-sans-serif!default;
+
+$body-background: $background-color!default;
+
+// Font Colors
+$family-monospace: Inconsolata,Consolas,Monaco,monospace!default;
+
+// Animation
+$transition-speed: .3s;
+
+// menu
+$menu-background: #fff !default
+$menu-dark-background: #2b333e !default
+$menu-label-padding: 10px 7px !default
+//$menu-link-hover-background: $white !default
+$menu-list-a-padding-x: 16px !default
+$menu-list-a-padding-y: 5px !default
+$menu-list-a-line-height: 25px !default
+$menu-list-color: #000 !default

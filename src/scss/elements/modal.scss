@@ -1,0 +1,103 @@
+$modal-box-shadow: 0 1px 4px rgba(0,0,0,.2) !default
+$modal-border-radius: 5px !default
+$modal-inner-border-color: 1px solid rgba(120,130,140,.13) !default
+$modal-title-font-size: 16px !default
+$modal-title-font-weight: 500 !default
+$modal-background-color: rgba($black, .8) !default
+//$modal-close-font: normal 700 21px/1
+$modal-confirm-width: 400px !default
+$modal-confirm-media-left-font-size: 20px !default
+
+.modal {
+  transition: all .3s ease;
+  &.align-baseline {
+    align-items: baseline;
+  }
+}
+.modal-background {
+  transition: opacity .3s ease;
+  background-color: $modal-background-color;
+}
+.modal-card {
+  box-shadow: $modal-box-shadow;
+  border-radius: $modal-border-radius;
+}
+.modal-card-head, .modal-card-foot {
+  background-color: #fff;
+  padding: 16px;
+}
+.modal-card-head {
+  border-bottom: $modal-inner-border-color;
+}
+.modal-card-foot {
+  border-top: $modal-inner-border-color;
+  justify-content: flex-end;
+}
+.modal-card-title {
+  font-size: $modal-title-font-size;
+  font-weight: $modal-title-font-weight;
+}
+.align-baseline {
+  .modal-card{
+    margin-top: 120px;
+  }
+}
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-card,
+.modal-leave-active .modal-card {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.close {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  cursor: pointer;
+  filter: alpha(opacity=20);
+  opacity: .2;
+  font-family: Arial,sans-serif;
+}
+.close:focus, .close:hover{
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.modal-confirm {
+  .modal-card{
+    width: $modal-confirm-width;
+    .media{
+      &.is-primary{
+        .media-left{
+          color: $primary;
+        }
+      }
+      &.is-info{
+        .media-left{
+          color: $info;
+        }
+      }
+      &.is-warning{
+        .media-left{
+          color: $warning;
+        }
+      }
+      &.is-danger{
+        .media-left{
+          color: $danger;
+        }
+      }
+    }
+    .media-left {
+      font-size: $modal-confirm-media-left-font-size;
+    }
+  }
+}

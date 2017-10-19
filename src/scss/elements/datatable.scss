@@ -1,0 +1,127 @@
+
+$table-row-even-background: $white;
+//$table-row-even-hover-background: $light-green-hover;
+//$table-row-odd-background: $lighter-grey;
+
+$table-head-height: 45px !default;
+$table-head-background: #fff !default;
+
+$table-body-height: 48px !default;
+$table-body-color: $black !default;
+
+.data-table-container {
+  position: relative;
+  .spinner {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -45px;
+  }
+  .no-data {
+    height: 100px;
+    line-height: 100px;
+  }
+}
+.data-table {
+  width: 100%;
+  //border-collapse: separate;
+  td, th{
+    word-wrap: break-word;
+    word-break: break-all;
+    vertical-align: middle;
+  }
+
+  thead tr{
+    background-color: $table-head-background;
+    height: $table-head-height;
+    .icon {
+      align-items: baseline;
+      margin-left: 3px;
+      cursor: pointer;
+    }
+    .filter-key {
+      cursor: pointer;
+    }
+    .is-sorting {
+      background-color: #fafafa;
+    }
+    th {
+      position: relative;
+    }
+    &:hover {
+      background-color: $table-head-background;
+    }
+  }
+
+  tbody tr {
+    height: $table-body-height;
+    color: $table-body-color;
+  }
+  .tr-pointer {
+    cursor: pointer;
+  }
+
+  //&.is-striped {
+  //  tbody tr:nth-child(even) {
+  //    background-color: $table-row-even-background;
+  //    &:hover {
+  //      background-color: $table-row-even-hover-background;
+  //    }
+  //  }
+  //  tbody tr:nth-child(odd) {
+  //    background-color: $table-row-odd-background;
+  //    &:hover {
+  //      background-color: $table-row-even-hover-background;
+  //    }
+  //  }
+  //}
+
+  .sortable {
+    cursor: pointer;
+    &:hover {
+      background-color: #fafafa;
+    }
+  }
+  .sort-trigger {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -10px;
+    .fa{
+      vertical-align: baseline;
+    }
+    &.sort-asc{
+      margin-top: -6px;
+    }
+    &.sort-desc{
+      margin-top: -13px;
+    }
+  }
+}
+.data-table-header{
+  .table{
+    margin-bottom: 0;
+    th{
+      border-bottom: none;
+    }
+  }
+}
+.table.is-bordered{
+}
+.table-toolbar {
+  &.level {
+    margin-bottom: 15px;
+  }
+}
+.toolbar-search {
+  .control.has-icon .icon{
+    cursor: pointer;
+    pointer-events: auto;
+  }
+}
+.filter-menu {
+  .fa {
+    margin-right: 0px!important;
+    margin-top: 1px;
+  }
+}
