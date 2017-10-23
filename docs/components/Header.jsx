@@ -20,8 +20,8 @@ class Header extends React.Component {
                 <span className="tag is-rounded is-primary">V0.1.0</span>
               </div>
               <div className="navbar-item">
-                <a href="https://git.internal.yunify.com/qui/skel" className="button is-outlined is-light">
-                  <Icon name="gitlab"/><span>Gitlab</span>
+                <a href="https://github.com/ACorolla/king-lens" className="button is-outlined is-light">
+                  <Icon name="github"/><span>GitHub</span>
                 </a>
               </div>
             </div>

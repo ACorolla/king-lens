@@ -8,7 +8,7 @@
 # install all this dependencies.
 npm install
 
-# development, default port: 8083
+# development, default port: 8088
 npm run dev
 
 # production
