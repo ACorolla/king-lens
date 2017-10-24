@@ -1,6 +1,7 @@
 /*eslint-disable */
 import IndexLayout from '../components/IndexLayout';
 import Layout from '../components/Layout';
+import Demo from '../components/Demo';
 
 import Index from '../pages/Index.md';
 
@@ -19,6 +20,12 @@ export default [
   {
     path: 'components',
     component: Layout,
+    childRoutes: [
+    ],
+  },
+  {
+    path: 'demo',
+    component: Demo,
     childRoutes: [
     ],
   },
