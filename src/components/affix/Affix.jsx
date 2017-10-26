@@ -28,6 +28,25 @@ class Affix extends React.Component {
     this.handleScroll = this.handleScroll.bind(this);
   }
 
+  componentDidMount() {
+    const rootNode = ReactDOM.findDOMNode(this);
+    const affixedClientHeight = rootNode.children[0].clientHeight;
+    const wrapStyle = { height: `${affixedClientHeight}px` };
+    const offsets = this.props.boundary ? 0 : this.props.offset;
+    this.setState({
+      affixedClientHeight,
+      wrapStyle,
+      offsets,
+    });
+    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleScroll);
+  }
+
   getScroll(w, top) {
     let ret = w[`page${(top ? 'Y' : 'X')}Offset`];
     const method = `scroll${top ? 'Top' : 'Left'}`;
@@ -48,7 +67,6 @@ class Affix extends React.Component {
     const body = document.body;
     const clientTop = element.clientTop || body.clientTop || 0;
     const clientLeft = element.clientLeft || body.clientLeft || 0;
-    // const clientHeight = element.clientHeight || 0;
     const scrollTop = this.getScroll(window, true);
     const scrollLeft = this.getScroll(window);
     return {
@@ -61,7 +79,6 @@ class Affix extends React.Component {
     const rootNode = ReactDOM.findDOMNode(this);
     const scrollTop = this.getScroll(window, true) + this.state.offsets;// handle setting offset
     const elementOffset = this.getOffset(rootNode);
-
     if (!this.state.affixed && scrollTop > elementOffset.top) {
       const styles = {
         top: `${this.state.offsets}px`,
@@ -113,26 +130,6 @@ class Affix extends React.Component {
         }
       }
     }
-  }
-
-  componentDidMount() {
-    const rootNode = ReactDOM.findDOMNode(this);
-    const affixedClientHeight = rootNode.children[0].clientHeight;
-    const wrapStyle = { height: `${affixedClientHeight}px` };
-    const offsets = this.props.boundary ? 0 : this.props.offset;
-    this.setState({
-      affixedClientHeight,
-      wrapStyle,
-      offsets,
-    });
-
-    window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('resize', this.handleScroll);
   }
 
   render() {
