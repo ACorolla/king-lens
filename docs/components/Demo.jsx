@@ -1,12 +1,20 @@
 import React from 'react';
-import { Affix, Icon } from 'lens';
+import { Button, Icon } from 'lens';
 
 class Demo extends React.Component {
+  handleClick = (e) => {
+    console.log(e);
+  };
+
   render() {
     return (
       <div>
         <Icon name="github"/>
-        <Affix />
+        <Button
+          onClick={this.handleClick}
+          size="small"
+        >点我
+        </Button>
       </div>
     );
   }
